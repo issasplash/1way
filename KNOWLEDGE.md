@@ -504,6 +504,137 @@ _(Что освоить, в каком порядке, по каким мате�
 
 ---
 
+### Web3 Security / Smart Contract Audit Track (детальная карта)
+
+Это **главное направление** под профиль пользователя: 0 ₽ старт, без публичности (псевдоним норм), чисто текстовая работа, технически глубокая, потолок $50k+/мес у топа.
+
+#### Что это вообще
+
+- Криптопроекты публикуют исходники своих смарт-контрактов и платят за найденные уязвимости.
+- Два формата:
+  - **Bug Bounty** (open-ended): постоянно открытая программа. Нашёл → отчёт → выплата по шкале серьёзности.
+  - **Audit Contests**: ограниченный период (5–21 день), участники соревнуются, призовой пул делится по баллам.
+- Платежи в USDC/USDT/ETH/нативный токен проекта. Прямо в кошелёк, без банков. Без KYC у большинства программ.
+
+#### Платформы (актуальное май 2026)
+
+| Платформа | Формат | Особенности | Ссылка |
+|---|---|---|---|
+| **Immunefi** | Bug bounty | Лидер. >$110M выплачено. Median $2k, average $52.8k. Crit-bug в Uniswap v4 = $15.5M | https://immunefi.com |
+| **Sherlock** | Contests + bounties | Активные крупные программы (Usual $16M в марте 2026). Для опытных | https://sherlock.xyz |
+| **Cantina** | Contests | Бывший Spearbit Community. Хорошо организованы контесты для middle-level | https://cantina.xyz |
+| **Code4rena** | Contests | Закрывается, поток идёт в Immunefi. Контесты ещё ведут до окончательного перехода | https://code4rena.com |
+| **Hats Finance** | Bounty + contests | Молодая, активная. Меньше конкурентов на конкретный проект | https://hats.finance |
+| **CodeHawks** (от Cyfrin) | Contests | Контесты от создателей Updraft. Начинающим легче пробиться | https://codehawks.cyfrin.io |
+
+**CodeHawks** для новичка — самый дружелюбный старт, потому что они от той же компании, что и обучает.
+
+#### Обучение (бесплатное и платное)
+
+**База (бесплатно, 100% must):**
+
+1. **Cyfrin Updraft Security Course** — 100+ лекций, 24+ ч видео, 5 hands-on аудитов. Покрывает Solidity, Foundry, security patterns, инвариантное тестирование, fuzzing. → https://updraft.cyfrin.io/courses/security
+2. **Patrick Collins YouTube** «Solidity, Blockchain, Smart Contracts 101» — фундамент. → https://www.youtube.com/@PatrickAlphaC
+3. **Secureum Bootcamp materials** — community-driven, бесплатный, продвинутый. → https://github.com/x676f64/secureum-mind_map
+4. **Solodit** — агрегатор всех публичных отчётов аудитов. Читать чужие отчёты = учиться на ошибках. → https://solodit.cyfrin.io
+5. **Smart Contract Programmer YouTube** (Tom Hirst, продвинутые темы Solidity, DeFi) — → https://www.youtube.com/@smartcontractprogrammer
+
+**Платное (опционально, после 6 мес базы):**
+- **Cyfrin Pro Security Course** — расширенная версия, ~$500.
+- **Secureum CARE bootcamp** — отбор по тестам, но бесплатный для прошедших отбор.
+
+#### Тренажёры / CTF (обязательная практика)
+
+| Платформа | Что это | Уровень |
+|---|---|---|
+| **Ethernaut** (OpenZeppelin) | 30+ уровней уязвимостей Solidity, классика | Начинающий → Средний |
+| **Damn Vulnerable DeFi** | Уязвимые DeFi-протоколы под взлом | Средний → Продвинутый |
+| **Capture The Ether** | Классические CTF-задачи | Начинающий |
+| **Paradigm CTF** | Соревнование Paradigm раз в год, sample-проблемы доступны | Высокий |
+| **Cyfrin CodeHawks First Flights** | Мини-контесты от Cyfrin специально для новичков | Начинающий |
+
+Ссылки: [Ethernaut](https://ethernaut.openzeppelin.com), [Damn Vulnerable DeFi](https://www.damnvulnerabledefi.xyz), [Capture The Ether](https://capturetheether.com), [Paradigm CTF](https://ctf.paradigm.xyz), [CodeHawks First Flights](https://codehawks.cyfrin.io/contests).
+
+#### Инструменты (must-have)
+
+- **Foundry** — фреймворк № 1 для разработки и тестирования контрактов. Solidity-native. → https://book.getfoundry.sh
+- **Hardhat** — альтернатива, JS-based. Реже у топ-аудиторов.
+- **Slither** (Trail of Bits) — статический анализатор. → https://github.com/crytic/slither
+- **Echidna** (Trail of Bits) — fuzzing tool. → https://github.com/crytic/echidna
+- **Mythril** — security analyzer. → https://github.com/Consensys/mythril
+- **Tenderly** — debugger для on-chain транзакций. → https://tenderly.co
+- **VS Code + Solidity extension** — IDE.
+
+#### Реальные деньги по фазам
+
+| Фаза | Срок | Доход | Что делаешь |
+|---|---|---|---|
+| Учёба база | мес 1–3 | $0 | Cyfrin Updraft, Patrick Collins, Foundry, Ethernaut |
+| Первая практика | мес 3–6 | $0–500 | Damn Vulnerable DeFi, CodeHawks First Flights, low-tier Cantina-контесты |
+| Первая выплата | мес 6–9 | $200–2000 разово | Cantina/Sherlock контесты, чтение отчётов на Solodit |
+| Регулярные сабмиты | мес 9–18 | $1k–10k/мес | Immunefi public programs, регулярные contests |
+| Профи | год 2+ | $10k–200k+/мес если в топ-50 | Private invite-only audits, репутация |
+
+**80% сливаются в первые 6 мес от отсутствия результата.** Это нормально и ожидаемо. Кто выжил год — получает редкую профессию.
+
+#### Конкретный путь от 0 до первой выплаты
+
+**Месяц 1–3: Solidity и Foundry — фундамент**
+- Cyfrin Updraft: пройти Foundry Fundamentals + Advanced Foundry.
+- Параллельно Patrick Collins YouTube playlist.
+- Написать 5–10 своих контрактов (ERC-20, ERC-721, vault, простой DEX).
+- Покрытие тестами 100%, через `forge test`.
+
+**Месяц 4–5: Security базы**
+- Cyfrin Updraft Security Course (основной курс).
+- Ethernaut — пройти все 30 уровней самостоятельно (не подсматривать).
+- Прочитать SWC Registry (база известных уязвимостей).
+- Solodit — читать по 5 отчётов в день.
+
+**Месяц 6: Первые контесты**
+- CodeHawks First Flights — обязательно, это специально для новичков.
+- Damn Vulnerable DeFi — все 13 challenges.
+- Подача на Cantina low-tier contests (на старте не ждать денег, ждать опыта).
+
+**Месяц 7–9: Регулярные сабмиты**
+- 2–4 контеста в месяц на Cantina/Sherlock.
+- Первые valid-сабмиты = первые деньги.
+- Изучение конкретных DeFi-механик: AMM, лендинг, perpetuals, staking.
+
+**Месяц 10–12: Immunefi**
+- Подача на public bounty программы.
+- Параллельно — рост рейтинга в Cantina/Sherlock.
+
+#### Сообщества (где общаются)
+
+- **Immunefi Discord** — главный хаб.
+- **Cyfrin Discord** — обучение + комьюнити.
+- **Cantina Discord** — контесты.
+- **Sherlock Discord** — контесты.
+- **Twitter must-follow:** @0xRajeev, @samczsun, @transmissions11, @0xKitsune, @PatrickAlphaC, @CyfrinAudits, @0xMacro, @hexenshikari, @SolidityLang.
+- Telegram: русскоязычных аудиторов в РФ мало, специализированных активных чатов нет. Можно влиться в @soliditydevs_chat (русскоязычный чат Solidity-девов).
+
+#### Жёсткая правда
+
+- **6–12 месяцев без денег.** Это не быстро.
+- **4–6 ч/день минимум**, иначе не дойдёшь до уровня.
+- **Первые сабмиты — будут invalid.** Споры, отказы, фрустрация. Это нормально.
+- **Конкуренция в топ-50 жёсткая** — там сидят русские и индийские чуваки 22–30 лет, по 8 ч/день уже 3+ лет.
+- **Английский активный нужен с 6-го месяца.** Все отчёты пишутся на английском. Сабмиты в Immunefi — формальный английский. Если slabый — параллельно качать письменный (Grammarly + ChatGPT-помощник).
+- **Псевдоним полностью норм.** В индустрии куча легендарных аудиторов под никами (@samczsun не публичный). Профиль на платформах = только GitHub-репутация + кошелёк для оплат.
+
+#### Альтернативные сабтреки внутри аудита
+
+- **DeFi-специализация:** AMM, лендинг, перпы, options, оракулы. Узкая, но самая денежная.
+- **Cross-chain bridges security** — горячая тема после серии хакерских атак 2022–25 (Wormhole, Ronin, Multichain).
+- **MEV / front-running защиты** — пересекается с MEV-направлением.
+- **Zk-proof security** — новая ниша, мало экспертов, высокий потолок.
+- **Solana-specific security** (Anchor framework) — Rust вместо Solidity, отдельная экосистема.
+
+---
+
+---
+
 ## 7. Журнал решений и попыток
 
 Хронологический лог: что попробовали, что сработало/не сработало, выводы.
